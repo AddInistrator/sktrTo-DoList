@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct sktrTo_DoListApp: App {
-    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            //ContentView()
+                //.environment(\.managedObjectContext, persistenceController.container.viewContext)
+            sktrTo_DoListView()
         }
     }
 }
