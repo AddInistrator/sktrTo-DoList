@@ -14,7 +14,7 @@ struct sktrTo_DoListApp: App {
         WindowGroup {
             //ContentView()
                 //.environment(\.managedObjectContext, persistenceController.container.viewContext)
-            sktrTo_DoListView()
+            sktrTo_DoIndexView()
         }
     }
 }

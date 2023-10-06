@@ -16,7 +16,10 @@
 		FA2441B02AC847D5004D508E /* sktrTo_DoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2441AF2AC847D5004D508E /* sktrTo_DoObject.swift */; };
 		FA2441B22AC84CE6004D508E /* sktrTo_DoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2441B12AC84CE6004D508E /* sktrTo_DoList.swift */; };
 		FA2441B42AC85048004D508E /* sktrTo_DoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2441B32AC85048004D508E /* sktrTo_DoListView.swift */; };
+		FA2C42982ACFEF42008FA8AA /* sktrDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C42972ACFEF42008FA8AA /* sktrDateFormatter.swift */; };
 		FA82A18C2AC859A7001A5861 /* sktrTo_DoEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82A18B2AC859A7001A5861 /* sktrTo_DoEditorView.swift */; };
+		FA86DCDB2ACD25B2008889EB /* sktrTo_DoIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86DCDA2ACD25B2008889EB /* sktrTo_DoIndexView.swift */; };
+		FA86DCDD2ACD2874008889EB /* sktrTo_DoMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86DCDC2ACD2874008889EB /* sktrTo_DoMemoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FAD770D82ACF009400E1D2B0 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		FA24417B2AC84646004D508E /* sktrTo-DoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sktrTo-DoList.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA24417E2AC84646004D508E /* sktrTo_DoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrTo_DoListApp.swift; sourceTree = "<group>"; };
@@ -49,7 +65,10 @@
 		FA2441AF2AC847D5004D508E /* sktrTo_DoObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrTo_DoObject.swift; sourceTree = "<group>"; };
 		FA2441B12AC84CE6004D508E /* sktrTo_DoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrTo_DoList.swift; sourceTree = "<group>"; };
 		FA2441B32AC85048004D508E /* sktrTo_DoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrTo_DoListView.swift; sourceTree = "<group>"; };
+		FA2C42972ACFEF42008FA8AA /* sktrDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrDateFormatter.swift; sourceTree = "<group>"; };
 		FA82A18B2AC859A7001A5861 /* sktrTo_DoEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrTo_DoEditorView.swift; sourceTree = "<group>"; };
+		FA86DCDA2ACD25B2008889EB /* sktrTo_DoIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrTo_DoIndexView.swift; sourceTree = "<group>"; };
+		FA86DCDC2ACD2874008889EB /* sktrTo_DoMemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrTo_DoMemoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +126,9 @@
 				FA2441B12AC84CE6004D508E /* sktrTo_DoList.swift */,
 				FA2441B32AC85048004D508E /* sktrTo_DoListView.swift */,
 				FA82A18B2AC859A7001A5861 /* sktrTo_DoEditorView.swift */,
+				FA86DCDA2ACD25B2008889EB /* sktrTo_DoIndexView.swift */,
+				FA86DCDC2ACD2874008889EB /* sktrTo_DoMemoView.swift */,
+				FA2C42972ACFEF42008FA8AA /* sktrDateFormatter.swift */,
 			);
 			path = "sktrTo-DoList";
 			sourceTree = "<group>";
@@ -146,12 +168,15 @@
 				FA2441772AC84646004D508E /* Sources */,
 				FA2441782AC84646004D508E /* Frameworks */,
 				FA2441792AC84646004D508E /* Resources */,
+				FAD770D82ACF009400E1D2B0 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "sktrTo-DoList";
+			packageProductDependencies = (
+			);
 			productName = "sktrTo-DoList";
 			productReference = FA24417B2AC84646004D508E /* sktrTo-DoList.app */;
 			productType = "com.apple.product-type.application";
@@ -224,6 +249,8 @@
 				Base,
 			);
 			mainGroup = FA2441722AC84646004D508E;
+			packageReferences = (
+			);
 			productRefGroup = FA24417C2AC84646004D508E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -266,9 +293,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2C42982ACFEF42008FA8AA /* sktrDateFormatter.swift in Sources */,
 				FA2441B02AC847D5004D508E /* sktrTo_DoObject.swift in Sources */,
+				FA86DCDD2ACD2874008889EB /* sktrTo_DoMemoView.swift in Sources */,
 				FA2441B42AC85048004D508E /* sktrTo_DoListView.swift in Sources */,
 				FA82A18C2AC859A7001A5861 /* sktrTo_DoEditorView.swift in Sources */,
+				FA86DCDB2ACD25B2008889EB /* sktrTo_DoIndexView.swift in Sources */,
 				FA2441B22AC84CE6004D508E /* sktrTo_DoList.swift in Sources */,
 				FA24417F2AC84646004D508E /* sktrTo_DoListApp.swift in Sources */,
 			);
@@ -429,6 +459,7 @@
 		FA2441A52AC84647004D508E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -457,6 +488,7 @@
 		FA2441A62AC84647004D508E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +559,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Add-Inistrator.test.sktrTo-DoListUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -544,6 +577,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Add-Inistrator.test.sktrTo-DoListUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

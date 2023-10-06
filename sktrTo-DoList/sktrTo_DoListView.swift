@@ -13,9 +13,9 @@ struct sktrTo_DoListView: View {
     @State private var selectedTo_DoObject:sktrTo_DoObject = sktrTo_DoObject(content: "", level: 5, ddl: Date(), completeTime: Date());
     @State private var isPresented:Bool = false;
     @State private var isEdit:Bool = false;
-    @StateObject private var selectedTo_DoList = sktrTo_DoList(To_DoList:[]);
+    @ObservedObject var selectedTo_DoList:sktrTo_DoList
     
-    func sktrFormatter(date:Date) -> String {
+    private func sktrFormatter(date:Date) -> String {
         let formatter:DateFormatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd HH:mm"
         return formatter.string(from: date)
@@ -56,7 +56,7 @@ struct sktrTo_DoListView: View {
                             Spacer()
                             HStack{
                                 Image(systemName: object.isCompleted ? "clock.badge.checkmark": "clock.badge.exclamationmark")
-                                Text(object.isCompleted ? "完成于：\(sktrFormatter(date:object.completeTime))" : "截止于：\(sktrFormatter(date:object.ddl))")
+                                Text(object.isCompleted ? "完成于：\(fmt.getDate(date:object.completeTime))" : "截止于：\(fmt.getDate(date:object.ddl))")
                                     .font(.subheadline)
                                 Spacer()
                             } .foregroundStyle(Color(uiColor: .hex(0x4C566A)))
@@ -88,8 +88,3 @@ struct sktrTo_DoListView: View {
     }
 }
 
-struct sktrTo_DoView_Previews: PreviewProvider {
-    static var previews: some View {
-        sktrTo_DoListView()
-    }
-}

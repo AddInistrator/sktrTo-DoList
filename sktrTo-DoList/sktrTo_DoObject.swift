@@ -16,6 +16,7 @@ struct sktrTo_DoObject: Identifiable, Equatable, Encodable, Decodable {
     var isCompleted:Bool = false;
     var ddl:Date = Date()
     var completeTime:Date = Date()
+    //var state:Bool = true
 }
 
 
@@ -69,7 +70,7 @@ extension UIColor {
 
 let sktrTo_DoLevelDictionary:[Int:sktrTo_DoLevel] = [
     1:sktrTo_DoLevel(type: "空", color: .gray),
-    2:sktrTo_DoLevel(type: "不重要", color: .hex(0xB48EAD)),
+    2:sktrTo_DoLevel(type: "不重要", color: .hex(0x81A1C1)),
     3:sktrTo_DoLevel(type: "普通", color: .hex(0xA3BE8C)),
     4:sktrTo_DoLevel(type: "重要", color: .hex(0xEBCB8B)),
     5:sktrTo_DoLevel(type: "紧急", color: .hex(0xBF616A))

@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import UIKit
 
 
 struct sktrTo_DoEditorView: View {
@@ -54,8 +53,8 @@ struct sktrTo_DoEditorView: View {
                     .bold()
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .background(Color(uiColor: .hex(0x5E81AC)))
+                    .clipShape(Capsule())
                     .padding(.horizontal, 20)
-                    .cornerRadius(40)
             })
         }
     }

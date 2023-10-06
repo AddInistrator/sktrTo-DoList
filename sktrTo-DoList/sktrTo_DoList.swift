@@ -64,4 +64,16 @@ class sktrTo_DoList: ObservableObject, Identifiable {
     func sortTo_DoObject() {
         self.To_DoList.sort(by: { $0.level > $1.level })
     }
+    
+    func getTo_DoMemoArray(isComplete:Bool, date:Date = Date()) -> [sktrTo_DoObject] {
+        
+        var temp:[sktrTo_DoObject] = []
+        for object in To_DoList {
+            if object.isCompleted == isComplete && fmt.isEqualDate(date1: object.ddl, date2: Date()) {
+                temp.append(object)
+            }
+        }
+        return temp
+    }
+
 }
