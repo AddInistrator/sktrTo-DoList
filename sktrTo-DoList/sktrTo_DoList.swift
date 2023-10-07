@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 class sktrTo_DoList: ObservableObject, Identifiable {
     
     @AppStorage("sktrTo_DoList") public var To_DoListDBObject:String = ""
@@ -19,6 +20,7 @@ class sktrTo_DoList: ObservableObject, Identifiable {
         if To_DoList.isEmpty {
             guard (try? self.To_DoList = JSONDecoder().decode([sktrTo_DoObject].self, from: To_DoListDBObject.data(using: .utf8)!)) != nil else { return }
         }
+        sortTo_DoObject()
     }
     
     func saveTo_DoDBObject() {
@@ -31,8 +33,9 @@ class sktrTo_DoList: ObservableObject, Identifiable {
             return;
         }
         self.To_DoList.append(object)
+        sortTo_DoObject()
         saveTo_DoDBObject()
-        //sortTo_DoObject()
+        makeNotification(object: object)
     }
     
     func switchComplete(object:sktrTo_DoObject){
@@ -55,14 +58,19 @@ class sktrTo_DoList: ObservableObject, Identifiable {
     
 
     func updateTo_DoObject(object: sktrTo_DoObject) {
+        
         let index = self.To_DoList.firstIndex( where: { $0.id == object.id } );
+        deleteNotification(object: self.To_DoList[index!])
         self.To_DoList[index!] = object;
-        //sortTo_DoObject()
+        makeNotification(object: self.To_DoList[index!])
+        sortTo_DoObject()
         saveTo_DoDBObject()
+        
     }
     
     func sortTo_DoObject() {
-        self.To_DoList.sort(by: { $0.level > $1.level })
+        self.To_DoList.sort(by: { fmt.isEqualDate(date1: $0.ddl, date2: $1.ddl) ?
+            $0.level > $1.level : fmt.getDate(date: $0.ddl) < fmt.getDate(date: $1.ddl) })
     }
     
     func getTo_DoMemoArray(isComplete:Bool, date:Date = Date()) -> [sktrTo_DoObject] {

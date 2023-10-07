@@ -10,16 +10,14 @@ import SwiftUI
 
 
 struct sktrTo_DoListView: View {
-    @State private var selectedTo_DoObject:sktrTo_DoObject = sktrTo_DoObject(content: "", level: 5, ddl: Date(), completeTime: Date());
-    @State private var isPresented:Bool = false;
-    @State private var isEdit:Bool = false;
+    @State private var selectedTo_DoObject:sktrTo_DoObject = sktrTo_DoObject(content: "", 
+                                                                             level: 5,
+                                                                             ddl: Date(),
+                                                                             completeTime: Date());
+    @State var isPresented:Bool = false;
+    @State var isEdit:Bool = false
     @ObservedObject var selectedTo_DoList:sktrTo_DoList
-    
-    private func sktrFormatter(date:Date) -> String {
-        let formatter:DateFormatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd HH:mm"
-        return formatter.string(from: date)
-    }
+    @Environment(\.colorScheme) var colorScheme
     
     
     var body: some View {
@@ -27,11 +25,15 @@ struct sktrTo_DoListView: View {
             HStack {
                 Spacer()
                 Image(systemName: "plus.circle")
-                    .font(.title2)
+                    .font(.title)
                     .foregroundStyle(Color.init(uiColor: .hex(0x5E81AC)))
                     .onTapGesture {
-                        isPresented.toggle(); isEdit = false
-                        selectedTo_DoObject = sktrTo_DoObject(content: "", level: 5, ddl: Date(), completeTime: Date());
+                        isEdit = false
+                        selectedTo_DoObject = sktrTo_DoObject(content: "", 
+                                                              level: 5,
+                                                              ddl: Date(),
+                                                              completeTime: Date());
+                        isPresented.toggle()
                     }
                     
             }.padding(.all, 20)
@@ -41,7 +43,8 @@ struct sktrTo_DoListView: View {
                         VStack {
                             Spacer()
                             Rectangle()
-                                .fill(Color(uiColor: object.isCompleted ? .gray : sktrTo_DoLevelDictionary[object.level]!.color))
+                                .fill(Color(uiColor: object.isCompleted ? 
+                                    .gray : sktrTo_DoLevelDictionary[object.level]!.color))
                                 .cornerRadius(2)
                                 .frame(width: 5)
                             Spacer()
@@ -55,11 +58,14 @@ struct sktrTo_DoListView: View {
                             }
                             Spacer()
                             HStack{
-                                Image(systemName: object.isCompleted ? "clock.badge.checkmark": "clock.badge.exclamationmark")
-                                Text(object.isCompleted ? "完成于：\(fmt.getDate(date:object.completeTime))" : "截止于：\(fmt.getDate(date:object.ddl))")
+                                Image(systemName: object.isCompleted ? 
+                                      "clock.badge.checkmark": "clock.badge.exclamationmark")
+                                Text(object.isCompleted ? 
+                                     "完成于：\(fmt.getDateAndTime(date:object.completeTime))" : "截止于：\(fmt.getDateAndTime(date:object.ddl))")
                                     .font(.subheadline)
                                 Spacer()
-                            } .foregroundStyle(Color(uiColor: .hex(0x4C566A)))
+                            } .foregroundStyle(Color(uiColor: colorScheme == .dark ? 
+                                .hex(0xD8DEE9) : .hex(0x4C566A)))
                             Spacer()
                         }.foregroundColor(object.isCompleted ? .gray : .primary)
                         // 这里用个Group套起来，里面用三元实现点击切换图标，展示是否已经完成
@@ -71,17 +77,20 @@ struct sktrTo_DoListView: View {
                             selectedTo_DoList.switchComplete(object: object)
                         }
                         .onLongPressGesture(perform: {
+                            selectedTo_DoList.switchComplete(object: object)
+                            selectedTo_DoList.switchComplete(object: object)
+                            isEdit = true
                             selectedTo_DoObject = object
                             isPresented.toggle()
-                            isEdit = true
                         })
                 // 这个调用将实现横滑删除功能
                 }.onDelete{ index in selectedTo_DoList.deleteTo_DoObject(offset: index) } 
             }
         }.animation(.default, value: selectedTo_DoList.To_DoList)
             .sheet(isPresented: $isPresented, content: {
-                sktrTo_DoEditorView(selectedTo_DoObject:selectedTo_DoObject, action: { object in
-                    isEdit ? selectedTo_DoList.updateTo_DoObject(object: object) : selectedTo_DoList.addTo_DoObject(object: object)
+                sktrTo_DoEditorView(selectedTo_DoObject:selectedTo_DoObject, 
+                                    action: { object in
+                                    isEdit ? selectedTo_DoList.updateTo_DoObject(object: object) : selectedTo_DoList.addTo_DoObject(object: object)
                     isPresented.toggle()
                 }, isEdit: isEdit)
             })

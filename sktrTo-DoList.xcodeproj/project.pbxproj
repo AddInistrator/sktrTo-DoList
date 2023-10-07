@@ -20,6 +20,9 @@
 		FA82A18C2AC859A7001A5861 /* sktrTo_DoEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82A18B2AC859A7001A5861 /* sktrTo_DoEditorView.swift */; };
 		FA86DCDB2ACD25B2008889EB /* sktrTo_DoIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86DCDA2ACD25B2008889EB /* sktrTo_DoIndexView.swift */; };
 		FA86DCDD2ACD2874008889EB /* sktrTo_DoMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86DCDC2ACD2874008889EB /* sktrTo_DoMemoView.swift */; };
+		FA96A4DC2AD04B9700E6243A /* sktrUserNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96A4DB2AD04B9700E6243A /* sktrUserNotifications.swift */; };
+		FA96A4FF2AD107DE00E6243A /* sktrQuoteArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96A4FE2AD107DE00E6243A /* sktrQuoteArray.swift */; };
+		FA96A5022AD10D9700E6243A /* PermissionsSwiftUINotification in Frameworks */ = {isa = PBXBuildFile; productRef = FA96A5012AD10D9700E6243A /* PermissionsSwiftUINotification */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,8 @@
 		FA82A18B2AC859A7001A5861 /* sktrTo_DoEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrTo_DoEditorView.swift; sourceTree = "<group>"; };
 		FA86DCDA2ACD25B2008889EB /* sktrTo_DoIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrTo_DoIndexView.swift; sourceTree = "<group>"; };
 		FA86DCDC2ACD2874008889EB /* sktrTo_DoMemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrTo_DoMemoView.swift; sourceTree = "<group>"; };
+		FA96A4DB2AD04B9700E6243A /* sktrUserNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrUserNotifications.swift; sourceTree = "<group>"; };
+		FA96A4FE2AD107DE00E6243A /* sktrQuoteArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrQuoteArray.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA96A5022AD10D9700E6243A /* PermissionsSwiftUINotification in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +135,8 @@
 				FA86DCDA2ACD25B2008889EB /* sktrTo_DoIndexView.swift */,
 				FA86DCDC2ACD2874008889EB /* sktrTo_DoMemoView.swift */,
 				FA2C42972ACFEF42008FA8AA /* sktrDateFormatter.swift */,
+				FA96A4DB2AD04B9700E6243A /* sktrUserNotifications.swift */,
+				FA96A4FE2AD107DE00E6243A /* sktrQuoteArray.swift */,
 			);
 			path = "sktrTo-DoList";
 			sourceTree = "<group>";
@@ -176,6 +184,7 @@
 			);
 			name = "sktrTo-DoList";
 			packageProductDependencies = (
+				FA96A5012AD10D9700E6243A /* PermissionsSwiftUINotification */,
 			);
 			productName = "sktrTo-DoList";
 			productReference = FA24417B2AC84646004D508E /* sktrTo-DoList.app */;
@@ -250,6 +259,7 @@
 			);
 			mainGroup = FA2441722AC84646004D508E;
 			packageReferences = (
+				FA96A5002AD10D9700E6243A /* XCRemoteSwiftPackageReference "PermissionsSwiftUI" */,
 			);
 			productRefGroup = FA24417C2AC84646004D508E /* Products */;
 			projectDirPath = "";
@@ -293,11 +303,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA96A4FF2AD107DE00E6243A /* sktrQuoteArray.swift in Sources */,
 				FA2C42982ACFEF42008FA8AA /* sktrDateFormatter.swift in Sources */,
 				FA2441B02AC847D5004D508E /* sktrTo_DoObject.swift in Sources */,
 				FA86DCDD2ACD2874008889EB /* sktrTo_DoMemoView.swift in Sources */,
 				FA2441B42AC85048004D508E /* sktrTo_DoListView.swift in Sources */,
 				FA82A18C2AC859A7001A5861 /* sktrTo_DoEditorView.swift in Sources */,
+				FA96A4DC2AD04B9700E6243A /* sktrUserNotifications.swift in Sources */,
 				FA86DCDB2ACD25B2008889EB /* sktrTo_DoIndexView.swift in Sources */,
 				FA2441B22AC84CE6004D508E /* sktrTo_DoList.swift in Sources */,
 				FA24417F2AC84646004D508E /* sktrTo_DoListApp.swift in Sources */,
@@ -465,6 +477,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"sktrTo-DoList/Preview Content\"";
+				DEVELOPMENT_TEAM = WF8KJ4NYR3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -494,6 +507,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"sktrTo-DoList/Preview Content\"";
+				DEVELOPMENT_TEAM = WF8KJ4NYR3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -628,6 +642,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA96A5002AD10D9700E6243A /* XCRemoteSwiftPackageReference "PermissionsSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jevonmao/PermissionsSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA96A5012AD10D9700E6243A /* PermissionsSwiftUINotification */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA96A5002AD10D9700E6243A /* XCRemoteSwiftPackageReference "PermissionsSwiftUI" */;
+			productName = PermissionsSwiftUINotification;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA2441732AC84646004D508E /* Project object */;
 }

@@ -10,21 +10,21 @@ import SwiftUI
 
 
 struct sktrTo_DoObject: Identifiable, Equatable, Encodable, Decodable {
-    var id = UUID();
+    var id = UUID()
     var content:String
-    var level:Int = 5;
-    var isCompleted:Bool = false;
+    var level:Int = 5
+    var isCompleted:Bool = false
     var ddl:Date = Date()
     var completeTime:Date = Date()
-    //var state:Bool = true
+    
 }
 
 
 struct sktrTo_DoLevel: Equatable, Hashable {
-    var type:String;
-    var color:UIColor;
+    var type:String
+    var color:UIColor
 }
-
+//这一个extension使得UIColor可以直接传入一个hex，显然不是我一时半会儿写出来的
 
 extension UIColor {
     static func hex(_ val: UInt) -> UIColor {

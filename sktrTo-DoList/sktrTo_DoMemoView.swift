@@ -13,19 +13,39 @@ struct sktrTo_DoMemoView: View {
     
     @State var selectedTo_DoObject:sktrTo_DoObject = sktrTo_DoObject(content: "", level: 5, ddl: Date(), completeTime: Date())
     @ObservedObject var selectedTo_DoList: sktrTo_DoList;
-    
-    private func sktrFormatter(date:Date) -> String {
-        let formatter:DateFormatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
-        return formatter.string(from: date)
-    }
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack {
-            HStack {
-                Text("今日ToDo").font(.title).bold()
+            Spacer()
+            VStack{
+                HStack {
+                    Text(fmt.getDate(date: Date())).font(.title).bold().foregroundStyle(Color(uiColor: .hex(0x5E81AC)))
+                    Spacer()
+                }
+            }.padding(.all)
+            VStack {
                 Spacer()
-            }.padding()
+                Text(sktrQuoteArray.randomElement()!)
+                    .font(.footnote)
+                    .foregroundStyle(Color .gray)
+                Spacer()
+            }.padding(.all)
+            VStack{
+                HStack {
+                    Text("今日ToDo")
+                        .font(.headline)
+                        .bold()
+                    Spacer()
+                }
+                HStack {
+                    Spacer()
+                    Text("今日已完成\(selectedTo_DoList.getTo_DoMemoArray(isComplete: true).count)项，还有\(selectedTo_DoList.getTo_DoMemoArray(isComplete: false).count)项未完成")
+                        .font(.footnote)
+                        .foregroundStyle(Color(uiColor: colorScheme == .dark ? .hex(0xD8DEE9) : .hex(0x4C566A)))
+                }
+            }.padding(.all)
+            
             List {
                 ForEach(selectedTo_DoList.getTo_DoMemoArray(isComplete: false)) { object in
                     HStack {
@@ -52,9 +72,11 @@ struct sktrTo_DoMemoView: View {
                         Group{
                             object.isCompleted ? Image(systemName: "circle.fill") : Image(systemName: "circle")
                         }
-                    }.contentShape(Rectangle())
+                    }   .contentShape(Rectangle())
+                        .onTapGesture { selectedTo_DoList.switchComplete(object: object) }
                 }
             }
+            Spacer()
         }
     }
 }

@@ -8,12 +8,15 @@
 
 import Foundation
 import SwiftUI
+import PermissionsSwiftUINotification
 
 struct sktrTo_DoIndexView: View {
     
     @StateObject var selectedTo_DoList:sktrTo_DoList = sktrTo_DoList(To_DoList:[]);
     
+    
     var body: some View {
+
         VStack {
             TabView {
                 sktrTo_DoMemoView(selectedTo_DoList: selectedTo_DoList)
@@ -24,7 +27,6 @@ struct sktrTo_DoIndexView: View {
         }
     }
 }
-
 #Preview {
     sktrTo_DoIndexView()
 }
