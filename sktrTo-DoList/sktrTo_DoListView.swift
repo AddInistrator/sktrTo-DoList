@@ -18,12 +18,19 @@ struct sktrTo_DoListView: View {
     @State var isEdit:Bool = false
     @ObservedObject var selectedTo_DoList:sktrTo_DoList
     @Environment(\.colorScheme) var colorScheme
+    @State var showHelper:Bool = false
     
     
     var body: some View {
         VStack {
             HStack {
                 Spacer()
+                Image(systemName: "questionmark.circle")
+                    .font(.title)
+                    .foregroundStyle(Color.init(uiColor: .hex(0x5E81AC)))
+                    .onTapGesture {
+                        showHelper = true
+                    }.sheet(isPresented: $showHelper, content: { sktrHelperView() })
                 Image(systemName: "plus.circle")
                     .font(.title)
                     .foregroundStyle(Color.init(uiColor: .hex(0x5E81AC)))

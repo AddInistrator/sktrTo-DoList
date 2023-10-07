@@ -20,9 +20,12 @@ struct sktrTo_DoMemoView: View {
             Spacer()
             VStack{
                 HStack {
-                    Text(fmt.getDate(date: Date())).font(.title).bold().foregroundStyle(Color(uiColor: .hex(0x5E81AC)))
+                    Text(fmt.getDate(date: Date()))
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundStyle(Color(uiColor: .hex(0x5E81AC)))
                     Spacer()
-                }
+                }.padding()
             }.padding(.all)
             VStack {
                 Spacer()
@@ -32,6 +35,7 @@ struct sktrTo_DoMemoView: View {
                 Spacer()
             }.padding(.all)
             VStack{
+                
                 HStack {
                     Text("今日ToDo")
                         .font(.headline)

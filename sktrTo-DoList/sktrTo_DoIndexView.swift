@@ -13,17 +13,16 @@ import PermissionsSwiftUINotification
 struct sktrTo_DoIndexView: View {
     
     @StateObject var selectedTo_DoList:sktrTo_DoList = sktrTo_DoList(To_DoList:[]);
-    
+    @State var showHelper: Bool = UserDefaults.isFirstLaunch()
     
     var body: some View {
-
         VStack {
             TabView {
                 sktrTo_DoMemoView(selectedTo_DoList: selectedTo_DoList)
                     .tabItem { Image(systemName: "calendar"); Text("Today") }
                 sktrTo_DoListView(selectedTo_DoList: selectedTo_DoList)
                     .tabItem { Image(systemName: "list.dash"); Text("ToDo") }
-            }
+            }.sheet(isPresented: $showHelper, content: { sktrHelperView() })
         }
     }
 }

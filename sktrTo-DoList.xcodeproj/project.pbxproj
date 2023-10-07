@@ -17,6 +17,8 @@
 		FA2441B22AC84CE6004D508E /* sktrTo_DoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2441B12AC84CE6004D508E /* sktrTo_DoList.swift */; };
 		FA2441B42AC85048004D508E /* sktrTo_DoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2441B32AC85048004D508E /* sktrTo_DoListView.swift */; };
 		FA2C42982ACFEF42008FA8AA /* sktrDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C42972ACFEF42008FA8AA /* sktrDateFormatter.swift */; };
+		FA3DD01B2AD1211000B67B27 /* sktrHelperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DD01A2AD1210F00B67B27 /* sktrHelperView.swift */; };
+		FA3DD01D2AD12CA800B67B27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DD01C2AD12CA800B67B27 /* AppDelegate.swift */; };
 		FA82A18C2AC859A7001A5861 /* sktrTo_DoEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82A18B2AC859A7001A5861 /* sktrTo_DoEditorView.swift */; };
 		FA86DCDB2ACD25B2008889EB /* sktrTo_DoIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86DCDA2ACD25B2008889EB /* sktrTo_DoIndexView.swift */; };
 		FA86DCDD2ACD2874008889EB /* sktrTo_DoMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86DCDC2ACD2874008889EB /* sktrTo_DoMemoView.swift */; };
@@ -69,6 +71,8 @@
 		FA2441B12AC84CE6004D508E /* sktrTo_DoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrTo_DoList.swift; sourceTree = "<group>"; };
 		FA2441B32AC85048004D508E /* sktrTo_DoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrTo_DoListView.swift; sourceTree = "<group>"; };
 		FA2C42972ACFEF42008FA8AA /* sktrDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrDateFormatter.swift; sourceTree = "<group>"; };
+		FA3DD01A2AD1210F00B67B27 /* sktrHelperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrHelperView.swift; sourceTree = "<group>"; };
+		FA3DD01C2AD12CA800B67B27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA82A18B2AC859A7001A5861 /* sktrTo_DoEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrTo_DoEditorView.swift; sourceTree = "<group>"; };
 		FA86DCDA2ACD25B2008889EB /* sktrTo_DoIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrTo_DoIndexView.swift; sourceTree = "<group>"; };
 		FA86DCDC2ACD2874008889EB /* sktrTo_DoMemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sktrTo_DoMemoView.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				FA24417E2AC84646004D508E /* sktrTo_DoListApp.swift */,
+				FA3DD01C2AD12CA800B67B27 /* AppDelegate.swift */,
 				FA2441822AC84646004D508E /* Assets.xcassets */,
 				FA2441842AC84646004D508E /* Preview Content */,
 				FA2441AF2AC847D5004D508E /* sktrTo_DoObject.swift */,
@@ -137,6 +142,7 @@
 				FA2C42972ACFEF42008FA8AA /* sktrDateFormatter.swift */,
 				FA96A4DB2AD04B9700E6243A /* sktrUserNotifications.swift */,
 				FA96A4FE2AD107DE00E6243A /* sktrQuoteArray.swift */,
+				FA3DD01A2AD1210F00B67B27 /* sktrHelperView.swift */,
 			);
 			path = "sktrTo-DoList";
 			sourceTree = "<group>";
@@ -303,6 +309,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3DD01D2AD12CA800B67B27 /* AppDelegate.swift in Sources */,
+				FA3DD01B2AD1211000B67B27 /* sktrHelperView.swift in Sources */,
 				FA96A4FF2AD107DE00E6243A /* sktrQuoteArray.swift in Sources */,
 				FA2C42982ACFEF42008FA8AA /* sktrDateFormatter.swift in Sources */,
 				FA2441B02AC847D5004D508E /* sktrTo_DoObject.swift in Sources */,
